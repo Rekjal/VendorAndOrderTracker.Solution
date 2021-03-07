@@ -1,34 +1,27 @@
 using System.Collections.Generic;
 
-namespace ToDoList.Models
+namespace VendorAndOrderTracker.Models
 {
   public class Order
   {
-    // public string Description { get; set; }
-    // public int Id { get; }
-    // private static List<Item> _instances = new List<Item> { };
+    public string Description { get; set; }
+    private static List<Order> _instances = new List<Order> { };
+    public int Id { get; }
+    public string Title { get; set; }
+    public string Price { get; set; }
+    public string Date { get; }
 
-    public Order()
+    public Order(string description, string title, int price)
     {
       // Description = description;
       // _instances.Add(this);
       // Id = _instances.Count;
+      // Title = title;
+      // Price = price;
+      // Date = DateTime.Now.ToString("M/d/yyyy");
     }
 
-    // public static List<Item> GetAll()
-    // {
-    //   return _instances;
-    // }
-
-    // public static void ClearAll()
-    // {
-    //   _instances.Clear();
-    // }
-
-    // public static Item Find(int searchId)
-    // {
-    //   return _instances[searchId-1];
-    // }
+  
 
   }
 }

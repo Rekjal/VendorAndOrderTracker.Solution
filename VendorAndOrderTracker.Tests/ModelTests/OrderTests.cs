@@ -6,16 +6,21 @@ using System;
 namespace VendorAndOrderTracker.Tests
 {
   [TestClass]
-  public class OrderTest
+  // public class OrderTest : IDisposable
+   public class OrderTest
   {
 
-    [TestMethod]
-    public void OrderConstructor_CreatesInstanceOfOrder_Order()
-    {
-      Order newOrder = new Order();
-      Assert.AreEqual(typeof(Order), newOrder.GetType());
-    }
+    // public void Dispose()
+    // {
+    //   Order.ClearAll();
+    // }
 
+    // [TestMethod]
+    // public void OrderConstructor_CreatesInstanceOfOrder_Order()
+    // {
+    //   Order newOrder = new Order("test");
+    //   Assert.AreEqual(typeof(Order), newOrder.GetType());
+    // }
 
   }
 }
