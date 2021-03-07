@@ -22,19 +22,19 @@ namespace VendorAndOrderTracker.Tests
       Assert.AreEqual(typeof(Order), newOrder.GetType());
     }
 
-    // [TestMethod]
-    // public void GetDescription_ReturnsDescription_String()
-    // {
-    //   //Arrange
-    //   string description = "Walk the dog.";
+    [TestMethod]
+    public void GetDescription_ReturnsDescription_String()
+    {
+      //Arrange
+      string description = "Trial Order";
 
-    //   //Act
-    //   Item newItem = new Item(description);
-    //   string result = newItem.Description;
+      //Act
+      Order newOrder = new Order(description, "Crossant order", 35);
+      string result = newOrder.Description;
 
-    //   //Assert
-    //   Assert.AreEqual(description, result);
-    // }
+      //Assert
+      Assert.AreEqual(description, result);
+    }
 
 
   }
