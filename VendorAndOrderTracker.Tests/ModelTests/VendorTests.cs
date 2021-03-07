@@ -119,7 +119,7 @@ namespace VendorAndOrderTracker.Tests
       List<Vendor> result = Vendor.GetAll();
 
       //Assert
-      CollectionAssert.AreEqual(newList, result);
+      CollectionAssert.AreEqual(newList, result); // Two Objects are pushed into a Static LIST and in this test the same two objects are pushed into a  LIST. Compare the 2 LISTS
     }
 
     [TestMethod]
@@ -138,6 +138,28 @@ namespace VendorAndOrderTracker.Tests
 
       //Assert
       Assert.AreEqual(newVendor02, result);
+    }
+
+    [TestMethod]
+    public void AddOrder_AssociatesOrderWithVendor_OrderList()
+    {
+      //Arrange
+      string descriptionOrder = "Trial Order";
+      string title = "Crossant order";
+      int price = 35;
+      Order newOrder = new Order(descriptionOrder, title, price);
+      List<Order> newList = new List<Order> { newOrder };
+
+      string name = "Vendor Name";
+      string descriptionVendor = "Vendor Description";
+      Vendor newVendor = new Vendor(name, descriptionVendor);
+      newVendor.AddOrder(newOrder);
+
+      //Act
+      List<Order> result = newVendor.Orders;
+
+      //Assert
+      CollectionAssert.AreEqual(newList, result);
     }
 
   }
