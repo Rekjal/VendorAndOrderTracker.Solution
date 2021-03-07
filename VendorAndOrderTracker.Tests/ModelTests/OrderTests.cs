@@ -27,15 +27,34 @@ namespace VendorAndOrderTracker.Tests
     {
       //Arrange
       string description = "Trial Order";
+      string title = "Crossant order";
+      int price = 35;
+      Order newOrder = new Order(description, title, price);
 
       //Act
-      Order newOrder = new Order(description, "Crossant order", 35);
       string result = newOrder.Description;
 
       //Assert
       Assert.AreEqual(description, result);
     }
 
+    [TestMethod]
+    public void SetDescription_SetDescription_String()
+    {
+      //Arrange
+      string description = "Trial Order";
+      string title = "Crossant order";
+      int price = 35;
+      Order newOrder = new Order(description, title, price);
 
+      //Act
+      string updatedDescription = "Real order";
+      newOrder.Description = updatedDescription;
+      string result = newOrder.Description;
+
+
+      //Assert
+     Assert.AreEqual(updatedDescription, result);
+    }
   }
 }
