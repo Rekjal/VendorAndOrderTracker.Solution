@@ -53,7 +53,7 @@ namespace VendorAndOrderTracker.Tests
 
 
       //Assert
-     Assert.AreEqual(updatedDescription, result);
+      Assert.AreEqual(updatedDescription, result);
     }
 
     [TestMethod]
@@ -88,10 +88,10 @@ namespace VendorAndOrderTracker.Tests
 
 
       //Assert
-     Assert.AreEqual(updatedPrice, result);
+      Assert.AreEqual(updatedPrice, result);
     }
 
-[TestMethod]
+    [TestMethod]
     public void GetTitle_ReturnsTitle_String()
     {
       //Arrange
@@ -123,7 +123,7 @@ namespace VendorAndOrderTracker.Tests
 
 
       //Assert
-     Assert.AreEqual(updatedTitle, result);
+      Assert.AreEqual(updatedTitle, result);
     }
 
     [TestMethod]
@@ -164,17 +164,35 @@ namespace VendorAndOrderTracker.Tests
     public void GetId_OrdersInstantiateWithAnIdAndGetterReturns_Int()
     {
       //Arrange
-       string description = "Trial Order";
+      string description = "Trial Order";
       string title = "Crossant order";
       int price = 35;
       Order newOrder = new Order(description, title, price);
 
       //Act
       int result = newOrder.Id;
-      
+
       //Assert
       Assert.AreEqual(1, result);
     }
 
+    public void Find_ReturnsCorrectItem_Item()
+    {
+      //Arrange
+      string description01 = "Trial Order-1";
+      string description02 = "Trial Order-2";
+      string title01 = "Crossant order";
+      string title02 = "Bread order";
+      int price01 = 35;
+      int price02 = 45;
+      Order newOrder1 = new Order(description01, title01, price01);
+      Order newOrder2 = new Order(description02, title02, price02);
+
+      //Act
+      Order result = Order.Find(2);
+
+      //Assert
+      Assert.AreEqual(newOrder2, result); //Order returned by Find() should match order newOrder2
+    }
   }
 }
