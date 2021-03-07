@@ -18,7 +18,7 @@ namespace VendorAndOrderTracker.Tests
     }
 
     [TestMethod]
-    public void GetName_ReturnsName_String()
+    public void GetDescription_ReturnsDescription_String()
     {
       //Arrange
       string name = "Vendor Name";
@@ -48,6 +48,39 @@ namespace VendorAndOrderTracker.Tests
 
       //Assert
       Assert.AreEqual(updatedDescription, result);
+    }
+
+    [TestMethod]
+    public void GetName_ReturnsName_String()
+    {
+      //Arrange
+      string name = "Vendor Name";
+      string description = "Vendor Description";
+      Vendor newVendor = new Vendor(name, description);
+
+      //Act
+      string result = newVendor.Name;
+
+      //Assert
+      Assert.AreEqual(name, result);
+    }
+
+    [TestMethod]
+    public void SetName_SetName_String()
+    {
+      //Arrange
+      string name = "Vendor Name";
+      string description = "Vendor Description";
+      Vendor newVendor = new Vendor(name, description);
+
+      //Act
+      string updatedName = "New Vendor Name";
+      newVendor.Name = updatedName;
+      string result = newVendor.Name;
+
+
+      //Assert
+      Assert.AreEqual(updatedName, result);
     }
 
 
