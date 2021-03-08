@@ -41,8 +41,3 @@ namespace VendorAndOrderTracker.Models
 
   }
 }
-
-
-
-
-//accepts an ID as an argument and then locates the Category in the static _instances array that matches.
