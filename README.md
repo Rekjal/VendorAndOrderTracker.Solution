@@ -6,7 +6,7 @@
 
 ## Description
 
-#### An MVC app to track various _Vendors_ and _Order (s)_ belonging to those vendors. User will be able to create Vendors and place vendor specific orders as well as see details of order and navigate between different pages. Project demonstrates knowledge of MVC design pattern and related concepts to successfully build web application. 
+#### An MVC app to track _Vendors_ and _Orders_ belonging to the vendors. User will be able to create Vendors and place vendor specific orders as well as see details of order and navigate between different pages. Project demonstrates knowledge of MVC design pattern and related concepts to successfully build web application. 
 
 ## Setup/Installation Requirements
 
