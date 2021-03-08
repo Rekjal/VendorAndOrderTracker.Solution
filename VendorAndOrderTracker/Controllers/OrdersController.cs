@@ -4,42 +4,32 @@ using System.Collections.Generic;
 
 namespace VendorAndOrderTracker.Controllers
 {
-  public class ItemsController : Controller
+  public class OrdersController : Controller
   {
 
-    // [HttpGet("/items")]          // URL PATH: object & ROUTE NAME: Index
-    // public ActionResult Index()  //Display list of object via GET.
-    // {
-    //   List<Item> allItems = Item.GetAll();
-    //   return View(allItems);
-    // }
+    [HttpGet("/vendors/{vendorId}/orders/new")]
+    public ActionResult New(int vendorId)
+    {
+      Vendor vendor = Vendor.Find(vendorId);
+      return View(vendor);
+    }
 
-    // [HttpGet("/items/new")] // URL PATH: object/new & ROUTE NAME: New 
-    // public ActionResult New()
-    // {
-    //   return View();
-    // }
+    [HttpPost("/orders/delete")]
+    public ActionResult DeleteAll()
+    {
+      Order.ClearAll();
+      return View();
+    }
 
-    // [HttpPost("/items")]  // URL PATH: object & ROUTE NAME: Create 
-    // public ActionResult Create(string description) //create a object using POST
-    // {
-    //   Item myItem = new Item(description);
-    //   return RedirectToAction("Index");
-    // }
-
-    // [HttpPost("/items/delete")]  //delete an object using POST
-    // public ActionResult DeleteAll()
-    // {
-    //   Item.ClearAll();
-    //   return View();
-    // }
-
-    // [HttpGet("/items/{id}")] //dynamic routing
-    // public ActionResult Show(int id)
-    // {
-    //   Item foundItem = Item.Find(id);
-    //   return View(foundItem);
-    // }
-
+    [HttpGet("/vendors/{vendorId}/orders/{orderId}")]
+    public ActionResult Show(int vendorId, int orderId)
+    {
+      Order order = Order.Find(orderId);
+      Vendor vendor = Vendor.Find(vendorId);
+      Dictionary<string, object> model = new Dictionary<string, object>();
+      model.Add("order", order);
+      model.Add("vendor", vendor);
+      return View(model);
+    }
   }
 }
