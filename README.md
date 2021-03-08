@@ -51,7 +51,7 @@
 
 ## Support and contact details
 
-_For questions, comments, or concerns *[email author](mailto:mailsalim@gmail.com?subject=[GitHub])*
+* For questions, comments, or concerns *[email author](mailto:mailsalim@gmail.com?subject=[GitHub])*
 
 
 ### License
