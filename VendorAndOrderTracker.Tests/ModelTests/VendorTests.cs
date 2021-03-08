@@ -119,7 +119,7 @@ namespace VendorAndOrderTracker.Tests
       List<Vendor> result = Vendor.GetAll();
 
       //Assert
-      CollectionAssert.AreEqual(newList, result); // Two Objects are pushed into a Static LIST and in this test the same two objects are pushed into a  LIST. Compare the 2 LISTS
+      CollectionAssert.AreEqual(newList, result); // Two Objects are pushed into a Static LIST and in this test the same two objects are pushed into a local LIST. Compare the 2 LISTS
     }
 
     [TestMethod]
