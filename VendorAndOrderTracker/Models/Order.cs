@@ -10,7 +10,7 @@ namespace VendorAndOrderTracker.Models
     public int Id { get; }
     public string Title { get; set; }
     public int Price { get; set; }
-    // public static DateTime Now { get; }
+    public string Date { get; set; }
 
     public Order(string description, string title, int price)
     {
@@ -19,7 +19,9 @@ namespace VendorAndOrderTracker.Models
       Id = _instances.Count;
       Title = title;
       Price = price;
-      // Date = DateTime.Now.ToString("M/d/yyyy");
+      // DateTime date1 = new DateTime(2008, 6, 1, 7, 47, 0);
+      // DateTime dateOnly = date1.Date;
+      Date = DateTime.Now.ToString("M/d/yyyy");
     }
 
     public static List<Order> GetAll()
